@@ -34,7 +34,7 @@ ul{
 #header{
     height: 100vh;/*画像の高さに合わせて可変はvh使う*/
     width: 100%;
-    background-image: url(article01.jpg);/*背景画像出来ないときあるのは画像フォルダに移動するときに..が入ってないから*/
+    background-image: url("article01.jpg");/*背景画像出来ないときあるのは画像フォルダに移動するときに..が入ってないから*/
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
