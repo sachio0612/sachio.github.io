@@ -1,0 +1,273 @@
+/*---------------    共通      ---------------------*/
+body {
+    font-family: "Arial", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    font-size: 0.875rem;
+    color: #2a2a2a;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    text-align: center;
+}
+
+p, h2{
+    margin: 0;
+    padding:0;
+}
+
+a{
+    text-decoration: none;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+
+/*---------------   ヘッダー       ---------------------*/
+#header{
+    height: 100vh;/*画像の高さに合わせて可変はvh使う*/
+    width: 100%;
+    background-image: url(../img/article01.jpg);/*背景画像出来ないときあるのは画像フォルダに移動するときに..が入ってないから*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    background-color: aqua;
+}
+/*なんか横幅100％なのに隙間あいてる気がする*/
+
+#header .site-title img{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: block;
+    height: 50px;
+    width: 120px;
+}
+
+/*---------------   メイン       ---------------------*/
+.titleText{
+    margin:0 auto;
+    max-width: 600px;
+}
+
+.archive:hover, .New:hover{
+    opacity: 0.8;
+}
+
+
+.special{
+    font-size: 22px;
+    margin: 0;
+}
+
+.special-p{
+    font-size: 14.5px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+
+.archive{
+    height: 500px;
+    width: 100%;
+    background-image: url(../img/20181116_011224.jpg);
+    margin-right: 20px;
+    background-position: center;
+}
+
+.New{
+    height: 500px;
+    width: 100%;
+    background-image: url(../img/article05.jpg);
+    background-position: center;
+}
+
+.main-text{
+    height: 100px;
+    width: 300px;
+    margin: auto;
+    margin-top: 200px;
+    color: white;
+}
+
+.main-text h2{
+    font-weight: normal;
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.main{
+    display: flex;
+}
+@media(max-width:896px){
+    .main{
+        flex-direction: column;
+    }
+    .archive{
+        margin-bottom: 30px;
+    }
+}
+
+/*---------------   ファッション＆スタイル       ---------------------*/
+
+.back-img {
+    height: 550px;
+    width: 100%;
+    background-image: url(../img/20190204_204743.jpg);
+    background-color: cadetblue;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+.back-img .titleText{
+    padding-top: 40px;
+}
+
+.read{
+    display: inline-block;
+    height: 32px;
+    width: 130px;
+    color: black;
+    border: 1px solid black;
+    padding-top: 6px;
+    font-size: 14px;
+}
+
+.read:hover{
+    opacity: 0.5;
+}
+
+/*---------------   カタログ,アンティーク      ---------------------*/
+.Catalog{
+    margin-bottom: 50px;
+}
+
+.Catalog .titleText{
+    margin: auto;
+}
+
+.Antique .titleText{
+    margin: auto;
+    margin-right: 30px;
+}
+
+.c-img{
+    max-width: 500px;
+    width: 100%;
+    height: 500px;
+    margin-bottom: 50px;
+    padding-right: 30px;
+}
+
+.a-img{
+    max-width: 500px;
+    width: 100%;
+    height: 500px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.catalog-p{
+    text-align: left;
+    margin: 30px 0;
+}
+
+
+.Catalog, .Antique{
+    display: flex;
+}
+
+.flex{
+    width: 50%;
+}
+
+@media(max-width:896px){
+    .Catalog, .Antique{
+        flex-direction: column;
+    }
+    .c-img, .a-img, .special-p{
+        max-width: 896px;
+    }
+
+    
+}
+
+/*---------------   フッター       ---------------------*/
+/*ギブアップ*/
+#footer {
+    background-color: #333;
+    font-size: 0.750rem;
+  }
+  #footer .flex-item {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  #footer .item {
+    width: 33%;
+    line-height: 2;
+  }
+  #footer .item:first-child {
+    padding: 60px 0;
+  }
+  #footer .item li::before {
+    content: "-";
+    margin-right: 5px;
+  }
+  #footer .item .title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  #footer .copyright {
+    background-color: #fff;
+    text-align: center;
+    padding: 30px 0;
+  }
+
+  #footer img{
+    top: 200px;
+    left: 50px;
+    display: block;
+    height: 50px;
+    width: 120px;
+  }
+
+  #footer a:hover{
+      opacity: 0.7;
+  }
+
+  @media(max-width:896px){
+    #footer .flex-item {
+        flex-direction: column;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        text-align: left;
+      }
+      #footer .item {
+        width: 100%;
+        margin-bottom: 30px;
+      }
+      #footer .item:first-child {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+      }
+  }
+
+
+
+/*---------------   ロゴ       ---------------------*/
+
+
+
