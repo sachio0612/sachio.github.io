@@ -1,0 +1,237 @@
+/*---------------    共通      ---------------------*/
+body{
+    color: #333;
+    font-size: 12px;
+    font-family: 'Raleway', sans-serif;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.wrapper{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+img{
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/*---------------   ヘッダー       ---------------------*/
+header{
+    max-width: 1000px;
+    padding: 26px 0 26px 0;
+    margin: 0 auto 50px auto;
+    border-bottom: 0.1px solid rgba(64, 56, 102, 0.582);
+}
+
+header h1{
+    text-align: center;
+    width: 109px;
+    margin: 0 auto 20px auto;
+    font-size: 25px;
+}
+
+.site-title a {
+    display: block;
+}
+
+header .flex-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .item ul{
+    display: flex;
+    align-items: center;
+}
+
+header .menu li{
+    margin-right: 13px;
+    font-size: 11px;
+}
+
+header .login li{
+    margin-left: 13px;
+    font-size: 11px;
+}
+
+/*---------------   メイン       ---------------------*/
+/*線が浮いちゃう*/
+/*テーブル要素確認*/
+
+.main .item h2{
+    border-top:  0.1px solid rgba(64, 56, 102, 0.582);
+    border-bottom:  0.1px solid rgba(64, 56, 102, 0.582);
+    line-height: 30px;
+    padding: 20px 0;
+}
+
+.main .item p{
+    line-height: 20px;
+    padding-bottom: 30px;
+    
+}
+
+.main .flex-item{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+.main .item{
+    width: 49%;
+}
+
+.main .item:first-child{
+    padding-right: 50px;
+}
+
+.main .order-table {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.main .order-table .color,
+.main .order-table .size{
+    width: 20%;
+}
+
+.main .order-table .quantity{
+    width: 60%;
+}
+
+.main .order-table td{
+    border-top: 0.1px solid rgba(64, 56, 102, 0.582);
+}
+
+.main .order-table th,
+.main .order-table td{
+    border-right: 0.1px solid rgba(64, 56, 102, 0.582);
+    padding: 10px;
+}
+
+.main .order-table th:last-child,
+.main .order-table td:last-child{
+    border-right:none;
+}
+
+.main .order-table select{
+    width: 100%;
+    padding: 0 10px;
+}
+
+.main input{
+    background-color: #4B4B4B;
+    color: white;
+    width: 100%;
+    border: none;
+    height: 60px;
+    margin-bottom: 30px;
+}
+
+.main input:hover{
+    cursor: pointer;
+}
+
+
+/*---------------   メイン       ---------------------*/
+
+.main .size-table {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+    border-top: 0.1px solid rgba(64, 56, 102, 0.582);
+    border-left: 0.1px solid rgba(64, 56, 102, 0.582);
+}
+
+.main .size-table .size{
+    width: 10%;
+    background-color: #ecebeb;
+}
+
+.main .size-table .chest,
+.main .size-table .weist,
+.main .size-table .height{
+    width: 30%;
+    background-color: #ecebeb;
+}
+
+.main .size-table th,
+.main .size-table td{
+    border-right: 0.1px solid rgba(64, 56, 102, 0.582);
+    border-bottom: 0.1px solid rgba(64, 56, 102, 0.582);
+    padding: 10px;
+}
+.main .size-table .size-back{
+    background-color: #ecebeb;
+}
+
+
+/*nav追加するとTOTTALYの文字消える*/
+@media(max-width:896px){
+    header {
+        margin-bottom: 0;
+        border-bottom: none;   
+    }
+    nav {
+        overflow-x: scroll;
+    }
+    .main .flex-item{
+        flex-direction: column;
+    }
+
+    .main .item{
+        width: 100%;
+    }
+    .main .img{
+        width: 100%;
+        margin: 0 0 10px 0;
+    }
+    header .menu ul,
+    header .login ul{
+        margin-bottom: 0;
+    }
+
+
+}
+
+
+
+/*---------------   ワークス       ---------------------*/
+
+
+
+/*---------------   ニュース    ---------------------*/
+
+
+
+/*---------------   コンタクト    ---------------------*/
+
+
+
+
+/*---------------   フッター       ---------------------*/
+#footer {
+    padding: 10px 0;
+  }
+  #footer .copyright {
+    font-size: 10px;
+    text-align: center;
+  }
+
+
+
