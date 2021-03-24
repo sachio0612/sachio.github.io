@@ -1,0 +1,363 @@
+/*---------------    共通      ---------------------*/
+body {
+  color: #333;
+  font-size: 1rem;
+  font-family: 'Noto Sans', 'Noto Sans JP', sans-serif;
+}
+
+img{
+    width: 100%;
+    object-fit: cover;
+}
+
+li{
+    list-style: none;
+}
+
+.wrapper{
+    max-width: 1200px;
+    padding: 0 16px;
+    margin: 0 auto;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+
+           /*readの部分でホバーした時の動き設定*/
+.read{
+    display: block;
+    text-align: center;
+}
+
+.read a{
+    padding-bottom: 1px;
+    color: #333;
+    position: relative;
+    text-decoration: none;
+}
+.read a::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: #333;
+    transition: all 200ms ease;
+}
+
+.read a:hover::after {
+    opacity: 0;
+    transform: translate(0,3px);
+}
+
+/*---------------   ヘッダー       ---------------------*/
+/*スクロールすると背景に出てくる→topの位置を0にすると大丈夫*/
+/*写真全体がトリミングされない形にしたい*/
+
+header{
+    position: fixed; /*画面固定*/
+    z-index: 999;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    margin-bottom: 40px;
+    background-color: white;
+}
+
+header h1{
+    font-weight: normal;
+    margin: 0;
+    color: black;
+    padding: 20px 16px;
+    line-height: 1px;
+}
+
+header #title a{
+    text-decoration: none;
+    display: inline-block;
+    text-decoration: none;
+}
+
+header ul{
+    display: flex;
+    background-color: #333;
+    height: 40px;
+    width: 100%;
+    color: white;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+header ul a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+header li{
+    padding-right: 60px;
+    margin: 10px 0;
+}
+
+@media screen and (max-width: 767px) {
+    header ul{
+        overflow-x: scroll;
+    }
+}
+/*---------------   メイン       ---------------------*/
+/*デフォでz-indexの下に消えてる→padding-topで上との空間必要*/
+
+.main-flex {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 150px;
+    margin-bottom: 50px;
+}
+
+.item{
+    width: 32%;
+    padding-right: 4px;
+    margin: 10px 0 15px 0;
+}
+
+#item-a {
+    text-decoration: none;
+}
+.item img{
+    height: 170px;
+}
+
+.item p{
+    font-weight: bold;
+    font-size: 15px;
+}
+
+@media screen and (max-width: 767px) {
+    .main-flex{
+        flex-direction: column;
+    }
+    .item{
+        width: 100%;
+    }
+    .item img{
+        height: 350px;
+    }
+}
+
+/*---------------   コンテンツ(全体レイアウト)       ---------------------*/
+.contents-flex{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 150px;
+}
+
+.left-contents {
+    width: 66%;
+    margin: 0;
+    padding: 0 10px 0 0 ;
+}
+
+.right-contents {
+    width: 33%;
+    margin: 0;
+    padding: 0;
+}
+
+.contents-flex .left-contents .item{
+    width: 100%; 
+    margin-bottom: 50px;
+}
+
+.contents-flex .right-contents .item{
+    width: 100%;   
+}
+
+@media screen and (max-width: 767px) {
+    .contents-flex{
+        flex-direction: column;
+    }
+    .left-contents,
+    .right-contents{
+        width: 100%;
+    }
+    .right-contents .ranking img{
+        height: 350px;
+    }
+}
+/*---------------   左側コンテンツ       ---------------------*/
+
+.contents-flex .left-contents ul{
+    display: flex;
+    padding: 0;
+    font-size: 14px;
+}
+
+
+.contents-flex .left-contents #item-a{
+    color: black;
+}
+.contents-flex .left-contents li{
+    padding-right: 15px;
+}
+.contents-flex .left-contents  .sub-flex a{
+    text-decoration: none;
+    color: black;
+}
+
+.contents-flex .left-contents .item img{
+    height: 400px;
+}
+
+.contents-flex .left-contents .item p{
+    text-align: center;
+    padding: 0 20px;
+}
+
+
+#img-position{
+    object-position: top;
+}
+/*---------------   右側コンテンツ    ---------------------*/
+/*プロフの写真を丸く切り取りたい→画像の円形加工はborder-radius*/
+
+.right-contents h3{
+    text-align: center;
+    margin: 30px 0;
+}
+
+.profile{
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.profile img{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+}
+
+.profile p{
+    font-size: 15px;
+    text-align: left;
+}
+
+.ranking{
+    margin-bottom: 50px;
+}
+
+.ranking img{
+    height: 180px;
+}
+
+.ranking p{
+    margin: 0 0 30px 0;
+    font-size: 15px;
+    color: black;
+}
+
+.archive a{
+    color: black;
+}
+.archive li{
+    border-top:0.5px solid black;
+    padding: 20px 0 20px 20px;
+    font-size: 12px;
+}
+
+.archive li:last-child{
+    border-bottom: 0.5px solid black;
+}
+
+.right-contents a{
+    text-decoration: none;
+}
+
+/*---------------   フッター       ---------------------*/
+footer{
+    width: 100%;
+    background-color: #f7f7f7;
+    text-align: left;
+    left: 0;
+    bottom: 0;
+    margin: 0;
+}
+
+footer a{
+    color: black;
+}
+
+footer .wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .footer-item{
+    padding-top: 50px;
+    width: 33%;
+    padding: 0 20px;
+}
+
+footer a{
+    text-decoration: none;
+}
+
+footer h2{
+    font-size: 16px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+footer p{
+    font-size: 14px;
+    padding-bottom: 30px;
+}
+
+footer ul{
+    padding: 0;
+ }
+
+.about li:before{
+    content: "▶ ";
+}
+
+.menu li{
+    border-top:0.5px solid black;
+    padding: 20px 0 20px 20px;
+    font-size: 12px;
+}
+
+.menu li:last-child{
+    border-bottom: 0.5px solid black;
+}
+
+.logo{
+    margin: 0;
+    padding: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.logo p{
+    font-size: 12px;
+    padding-top: 80px;
+    margin: 0;
+}
+
+
+@media screen and (max-width: 767px) {
+    footer .wrapper{
+        flex-direction: column;
+    }
+    footer .footer-item{
+        width: 100%;
+    }
+}
+
+
+
