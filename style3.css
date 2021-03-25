@@ -30,6 +30,10 @@ table {
     border-spacing: 0;
 }
 /*---------------   ヘッダー       ---------------------*/
+header a{
+    color: black;
+}
+
 header{
     max-width: 1000px;
     padding: 26px 0 26px 0;
