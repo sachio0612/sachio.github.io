@@ -136,6 +136,10 @@ img{
     margin-bottom: 40px;
 }
 
+#news a{
+    color: black;
+}
+
 #news h2{
     text-align: center;
     margin-bottom: 40px;
