@@ -1,0 +1,406 @@
+/*---------------    共通      ---------------------*/
+html {
+    font-size: 100%;
+    font-family: "Helvetica Neue", "Arial", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.wrapper{
+    max-width: 1000px;
+    padding: 90px 16px 150px 16px;
+    margin: 0 auto;
+}
+
+@media(max-width:767px){
+    .wrapper{
+        padding: 30px 16px 50px 16px;
+    }
+}
+
+/*---------------   ヘッダー       ---------------------*/
+header{
+    height: 100vh;
+    width: 100%;
+    background-image: url("../img/1534998432845.jpg");
+    background-size: cover;
+    background-position: 90% 0%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.main-title{
+    position: absolute;
+    text-align: center; 
+    top: 20%;   /*画面小さくするとずれてる？*/
+    bottom: 40%;
+    left: 0;
+    right: 0; /*left,rightどっちも０にしないとtext-align:centerは無効らしい？*/
+}
+
+
+.main-title a{
+    color: black;
+}
+.main-title h1{
+    font-size: 110px;
+    filter: drop-shadow(5px 5px 1px #fff); 
+}
+
+.menu-list ul{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    top: 15px;
+    right: 15px;
+    text-align: center;
+}
+
+.menu-list li{
+    padding-right: 20px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+.menu-list a{
+    color: black;
+}
+            /*メニューにホバーした時の動き*/
+.menu-list a:hover{
+    color: red;
+    transition: 1s;
+    filter: drop-shadow(10px 10px 3px #4444dd); /*影を付ける*/
+}
+
+/*---------------   メニュー       ---------------------*/
+.menu{
+    margin-bottom: 50px;
+}
+
+.menu-title{
+    margin-top: 30px;
+    height: 300px;
+    width: 100%;
+    background-image: url("../img/article01.jpg");
+    background-repeat: none;
+    background-size: cover;
+    background-attachment: fixed; /*背景画像固定*/
+    position: relative;
+}
+
+.menu-title h2{
+    font-size: 70px;
+    text-align: center;
+    filter: drop-shadow(5px 5px 1px #fff);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10%;
+}
+
+.menu-flex{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.flex-item h3{
+    font-size: 40px;
+    border-bottom:6px solid red;
+    display: inline-block; /*指定しないとinline要素で幅がなくて線が伸びちゃうからinline-blockで幅をもたせる*/
+    margin: 0 auto 60px auto;
+}
+
+.menu-flex .flex-item{
+    width: 50%;
+    padding: 0 45px;
+}
+
+.menu .menu-flex .coffee{
+    border-right: 1px solid black;
+}
+
+.menu dl{
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu dt{
+    float: left;
+    border-bottom:1px dotted black; /*点線はdotted*/
+    width: 87%;
+    padding-right: 30px;
+    text-align: left;
+}
+
+.menu dd{
+    padding-top: 10px;
+    width: 13%;
+    text-align: right;
+}
+
+#food{
+    margin-bottom: 60px;
+}
+
+
+@media(max-width:767px){
+    .menu-title{
+        margin-top: 10px;
+        height: 100px;
+        background-attachment: scroll; /*背景画像固定*/
+    }
+    .menu-title h2{
+        font-size: 30px;
+        top: 5%;
+        filter: drop-shadow(5px 5px 1px gray);
+    }
+
+    .flex-item h3{
+        font-size: 20px;
+    }
+    .menu-flex{
+        padding-top: 10px;
+        flex-direction: column;
+    }
+    .menu .flex-item{
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+    .menu .menu-flex .coffee{
+        border-right: none
+    }
+    .menu{
+        margin-bottom: 0;
+    }
+    #food{
+        margin-top: 60px;
+        padding-bottom: 30px;
+    }
+}
+
+
+/*---------------   アバウト       ---------------------*/
+.about-title{
+    margin-top: 30px;
+    height: 300px;
+    width: 100%;
+    background-image: url("../img/article03.jpg");
+    background-repeat: none;
+    background-size: cover;
+    background-attachment: fixed; /*背景画像固定*/
+    position: relative;
+}
+
+.about-title h2{
+    font-size: 70px;
+    text-align: center;
+    filter: drop-shadow(5px 5px 1px #fff);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10%;
+}
+
+.about{
+    text-align: center;
+}
+
+.about h3{
+    font-size: 40px;
+    border-bottom:6px solid red;
+    display: inline-block; /*指定しないとinline要素で幅がなくて線が伸びちゃうからinline-blockで幅をもたせる*/
+    margin: 0 auto 60px auto;
+    padding-top: 100px;
+}
+
+.about-flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-item{
+    width: 50%;
+    padding: 3px 30px;
+    line-height: 30px;
+}
+
+.about-item p{
+    padding-bottom: 30px;
+    text-align: left;
+}
+
+
+
+            /*ホバーした時の動き*/
+.btn {
+    width: 160px;
+    height: 50px;
+    line-height: 52px;
+    display: inline-block;
+    color: #000;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+.btn span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn:before,
+.btn:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: #e03131;
+  transition: all 0.3s ease;
+}
+.btn span:before,
+.btn span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: #e03131;
+  transition: all 0.3s ease;
+}
+.btn:before,
+.btn span:before {
+  width: 2px;
+  height: 50%;
+}
+.btn:after,
+.btn span:after {
+  width: 20%;
+  height: 2px;
+}
+.btn:hover:before,
+.btn span:hover:before {
+  height: 100%;
+}
+.btn:hover:after,
+.btn span:hover:after {
+  width: 100%;
+}
+
+
+@media(max-width:767px){
+    .about-title{
+        margin-top: 0;
+        height: 100px;
+        width: 100%;
+        background-attachment: scroll; /*背景画像固定*/
+    }
+    
+    .about-title h2{
+        font-size: 30px;
+        top: 5%;
+    }
+    .about h3{
+        font-size: 20px;
+        padding-top: 0;
+    }
+    .about-flex{
+        flex-direction: column;
+    }
+    
+    .about-item{
+        width: 100%;
+        padding-left: 0;
+    }
+
+}
+
+
+            
+/*---------------      ロケーション    ---------------------*/
+
+.location-title{
+    margin-top: 30px;
+    height: 300px;
+    width: 100%;
+    background-image: url("../img/zzz2.jpg");
+    background-repeat: none;
+    background-size: cover;
+    background-attachment: fixed; /*背景画像固定*/
+    position: relative;
+}
+
+.location-title h2{
+    font-size: 70px;
+    text-align: center;
+    filter: drop-shadow(5px 5px 1px #fff);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10%;
+}
+
+.location{
+    text-align: center;
+}
+
+.location h3{
+    font-size: 40px;
+    border-bottom:6px solid red;
+    display: inline-block; /*指定しないとinline要素で幅がなくて線が伸びちゃうからinline-blockで幅をもたせる*/
+    margin: 0 auto 60px auto;
+}
+
+.location p{
+    text-align: left;
+}
+
+.map{
+    width: 100%;
+    filter: grayscale(1);/*灰色に暗くする*/
+    overflow: hidden; /*はみでた要素を隠す、これが無いと画面小さい時にも地図が横に広がって崩れる*/
+}
+
+@media(max-width:767px){
+    .location-title{
+        margin-top: 10px;
+        height: 100px;
+        background-attachment: scroll; /*背景画像固定*/
+    }
+    
+    .location-title h2{
+        font-size: 30px;
+        top: 5%;
+    }
+    .location h3{
+        font-size: 20px;
+    }
+}
+
+/*---------------   フッター       ---------------------*/
+footer{
+    font-size: 8px;
+    text-align: center;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+}
+
+
+
