@@ -20,6 +20,10 @@ a {
     margin: 0;
 }
 /*---------------   ヘッダー       ---------------------*/
+header a{
+    color: black;
+}
+
 #header{
     display:flex;
     justify-content: space-between; /*要素を左右均等に配置*/
