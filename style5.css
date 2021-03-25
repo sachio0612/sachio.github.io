@@ -35,7 +35,7 @@ a{
 header{
     height: 100vh;
     width: 100%;
-    background-image: url("../img/1534998432845.jpg");
+    background-image: url("1534998432845.jpg");
     background-size: cover;
     background-position: 90% 0%;
     position: relative;
@@ -96,7 +96,7 @@ header{
     margin-top: 30px;
     height: 300px;
     width: 100%;
-    background-image: url("../img/article01.jpg");
+    background-image: url("article01.jpg");
     background-repeat: none;
     background-size: cover;
     background-attachment: fixed; /*背景画像固定*/
@@ -201,7 +201,7 @@ header{
     margin-top: 30px;
     height: 300px;
     width: 100%;
-    background-image: url("../img/article03.jpg");
+    background-image: url("article03.jpg");
     background-repeat: none;
     background-size: cover;
     background-attachment: fixed; /*背景画像固定*/
@@ -339,7 +339,7 @@ header{
     margin-top: 30px;
     height: 300px;
     width: 100%;
-    background-image: url("../img/zzz2.jpg");
+    background-image: url("zzz2.jpg");
     background-repeat: none;
     background-size: cover;
     background-attachment: fixed; /*背景画像固定*/
