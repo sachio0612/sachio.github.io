@@ -1,0 +1,436 @@
+/*---------------    共通      ---------------------*/
+.body{
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.wrapper{
+    max-width: 1360px;
+    margin: 0 30px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+/*---------------   ヘッダー       ---------------------*/
+header{
+    top: 0;
+    left: 0;
+    height: 80px; /*ヘッダーより下の要素は少なくとも80pxあけないとかぶる*/
+    width: 100%;
+    position: fixed;
+    z-index: 10;        /*通常時表示、ボタン開くと下に配置*/
+    background-color: white;
+}
+
+header .head{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-title a{
+    color: black;
+    font-size: 10px;
+    line-height: 60px;
+}
+
+.header-title h1:hover{
+    opacity: 0.5;
+    transition: 1s;
+}
+
+        /*ボタン部分*/
+
+.toggle_btn {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    transition: all 0.5s;
+    cursor: pointer;        /*クリックするようなaタグとかでもないのでポインターにする*/
+    z-index: 20;            /*背景開いても表面に出る*/
+    margin: 30px 0;
+}
+.toggle_btn span {
+  display: block;
+  position: absolute;       /*メニューの横棒を浮かす*/
+  width: 30px;
+  height: 2px;
+  background-color: #333;
+  border-radius: 4px;
+  transition: all 0.5s;
+}
+.toggle_btn span:nth-child(1) {
+  top: 10px;                /*横棒配置*/
+}
+.toggle_btn span:nth-child(2) {
+  bottom: 10px;             /*横棒配置*/
+}
+.open .toggle_btn span {
+  background-color: #fff;  /*openクラス付与で白に色変更*/
+}
+.open .toggle_btn span:nth-child(1) {/*openクラス付与でバツ印に変形*/
+  -webkit-transform: translateY(4px) rotate(-45deg);
+  transform: translateY(4px) rotate(-45deg);
+}
+.open .toggle_btn span:nth-child(2) {/*openクラス付与でバツ印に変形*/
+  -webkit-transform: translateY(-4px) rotate(45deg);
+  transform: translateY(-4px) rotate(45deg);
+}
+
+
+
+#navi {                     /*openクラス付与時のメニュー*/
+  position: fixed;
+  top: 0;
+  left: -300px;             /*横幅と同じだけ左に移動させてデフォで見えない状態*/
+  width: 300px;
+  color: #fff;
+  padding: 36px 20px;
+  transition: all 0.5s;
+  z-index: 20;              /*ボタン押したら表面に出てくる*/
+  opacity: 0;
+}
+#navi a {
+  color: #fff;
+}
+#navi li {
+  margin-bottom: 14px;
+}
+.open #navi {
+  left: 0;                  /*openクラス付与で左に移動してた分が消えて左から出てくる動きに。*/
+  opacity: 1;
+}
+
+
+
+#mask {                     /*ボタン押したときの背景*/
+    display: none;
+    transition: all 0.5s;
+}
+.open #mask {               /*jsでmaskを押せばopenクラス消えるようにしてるので何処押してもopenクラス消える*/
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;            /*画面全体表示*/
+    height: 100%;
+    background: #000;
+    opacity: .8;
+    z-index: 10;            /*ボタン押したときに背景として下に来る*/
+    cursor: pointer;
+}
+
+
+/*---------------   メイン       ---------------------*/
+.main-flex{
+    width: 100%;
+    padding-top: 90px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 15px;
+}
+
+
+.product{
+    flex: auto;
+    width: 24%;
+    padding:0 15px 50px 15px;
+}
+
+.product img{
+    height: 200px;
+}
+
+.product p{
+    font-size: 12px;
+    margin: 0;
+}
+
+.main-flex a{
+    display: inline-block;
+    color: black;
+    margin: 0 auto;
+    padding-top: 0;
+}
+
+.btn p{
+    margin:0 auto 50px auto;
+}
+.btn p:hover{
+    opacity: 0.5;
+    transition: 1s;
+}
+
+.product:hover{
+    opacity: 0.7;
+    transition: 1s;
+}
+
+@media(max-width:900px){
+    .product{
+        width: 50%;
+        padding:0 20px 30px 20px;
+    }
+    .product img{
+        height: 350px;
+    }
+}
+
+
+/*---------------   View More1  ---------------------*/
+.sub-title{
+    font-size: 15px;
+    font-weight: normal;
+    padding-top: 90px;
+    margin: 0 30px;
+}
+
+.sub-title h3{
+    font-weight: normal;
+}
+
+.main-flex1{
+    width: 100%;
+    padding-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 15px;
+}
+
+.main-flex1 a{
+    display: inline-block;
+    color: black;
+    margin: 0 auto;
+    padding-top: 0;
+}
+
+.number{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto 50px auto;
+    padding: 0;
+}
+
+.number li{
+    padding: 0 20px;
+    font-size: 13px;
+}
+
+.number .btn:hover{  /*2ページ目で１にホバーすると全体が震える謎*/
+    opacity: 0.5;
+    transition: 1s;
+}
+
+/*---------------   商品紹介ページ   ---------------------*/
+.product-page{
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px;
+}
+
+.product-item{
+    width: 50%;
+}
+
+.product-item img{
+    height: 370px;
+}
+
+.product-img{
+    margin-right: 30px;
+}
+
+.product-text{
+    margin-left: 30px;
+    font-size: 14px; 
+}
+
+.product-text p {
+    margin-bottom: 30px;
+}
+
+.product-text dt{
+    float: left;
+    width: 30%;
+}
+
+.product-text dd{
+    width: 70%;
+}
+
+.back-btn p{
+    color: black;
+    margin:50px auto;
+    text-align: center;
+}
+
+.back-btn p:hover{
+    opacity: 0.5;
+    transition: 1s;
+}
+
+@media(max-width:900px){
+    .product-page{
+        flex-direction: column;
+    }
+    .product-item{
+        width: 100%;
+    }
+    .product-text{
+        margin: 0;
+    }
+}
+
+
+/*---------------   アバウト       ---------------------*/
+.about{
+    max-width: 600px;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.about p{
+    font-size: 14px;
+    line-height: 28px;
+    margin-bottom: 30px;
+}
+
+
+
+/*---------------   カンパニー       ---------------------*/
+
+.company{
+    max-width: 600px;
+}
+
+.company dl{        /*dl要素*でdisplay:flexの横並びがうまくできない floatだと崩れる*/
+    margin:50px 0;
+    font-size: 14px;
+}
+.company dt{
+    float: left;
+    border-bottom: 1px solid #dcdbdb;
+    width: 30%;
+    padding-bottom: 30px;
+    padding-left: 5px;
+    padding-top: 30px;
+}
+
+.company dd{
+    border-bottom: 1px solid #dcdbdb;
+    width: 65%;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.company dt:last-of-type,
+.company dd:last-of-type{
+    border-bottom: none;
+}
+
+.map{
+    overflow-x: hidden;
+    filter: grayscale(1);
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+
+@media(max-width:900px){
+    .company dt{
+        float: none;
+    }
+    .company dt{
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    .company dd{
+        margin: 0;
+        padding-left: 5px;
+        padding-top: 5px;
+        padding-bottom: 15px;
+    }
+}
+
+
+
+/*---------------   コンタクト    ---------------------*/
+
+
+
+
+/*---------------   フッター       ---------------------*/
+footer .wrapper{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.sns{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.sns ul{
+    display: flex;
+    padding: 0;
+}
+
+.sns li{
+    padding-right: 30px;
+    font-size: 12px;
+    padding-bottom: 0;
+}
+
+.sns li p{
+    color: black;
+}
+
+.sns li:hover{
+    opacity: 0.5;
+    transition: 1s;
+}
+
+
+.footer-logo p{
+    font-size: 7px;
+    line-height: 60px;
+}
+
+
+
+@media(max-width:900px){
+    .sns{
+        flex-direction: column;
+    }
+    .sns li p{
+        margin-bottom: 0;
+    }
+    .footer-logo p{
+        padding: 0;
+        line-height: 0;
+    }
+}
+
+
+
+
+
