@@ -1,0 +1,190 @@
+<!--練習で使ったサイト　https://code-step.com/demo/html/media/　 　-->
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LP練習7</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,900&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style7.css">
+    <link rel="stylesheet" type="text/css" href="slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick-theme.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="slick.min.js"></script>
+    <script src="main7.js"></script>
+</head>
+
+<body>
+
+
+<header id="header">
+    <div class="head wrapper">
+        <div class="logo">
+            <a href="https://code-step.com/demo/html/media/"><h1>Nyanchans</h1></a>
+        </div>
+
+        <nav>
+            <ul class="menu">
+                <li><a href="#pickup">PICK UP</a></li>
+                <li><a href="#feature">FEATURE</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+            <ul class="sns">
+                <li><a href="https://twitter.com/">Twitter</a></li>
+                <li><a href="https://www.facebook.com/">facebook</a></li>
+                <li><a href="https://www.instagram.com/">instagram</a></li>
+            </ul>
+        </nav>
+
+        <div id="mask"></div>
+
+        <div class="toggle_btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</header>
+
+
+<div class="movie">
+    <video src="img/bibi00.mp4" poster="sample.jpg" autoplay preload loop muted>    <!--autoplay：自動再生　preload：ページ読み込み時に堂が読み込む　loop：ループ再生　muted：無音-->
+        <p>動画を再生するにはvideoタグをサポートしたブラウザが必要です。</p>
+    </video>
+</div>
+
+
+<!--slick-areaの使い方わからんjsの動きも謎-->
+<div class="pick" id="pickup">
+    <div class="sub-title">
+        <h1>PICK UP</h1>
+    </div>
+    <ul class="slick-area">
+        <li><img id="slide-img" src="img/contact01.jpg"></li>
+        <li><img id="slide-img" src="img/ma01.jpg"></li>
+        <li><img id="slide-img" src="img/nyanya01.jpg"></li>
+        <li><img id="slide-img" src="img/nyanya04.jpg"></li>
+        <li><img id="slide-img" src="img/o03.jpg"></li>
+    </ul>
+</div>
+
+<!--gridでもレイアウト可能-->
+<div class="wrapper" id="feature">
+    <div class="sub-title">
+        <h1>FEATURE</h1>
+    </div>
+    <div class="feature">
+        <ul>
+            <li>
+                <img class="fadein" src="img/o04.jpg">
+                <div class="text">
+                    <p>category</p>
+                    <h3>テキストテキストテキストテキストテキストテキストテキストテキスト</h3>
+                    <p>XXXX.XX.XX</p>
+                </div>
+            </li>
+            <li>
+                <img class="fadein" src="img/o07.jpg">
+                <div class="text">
+                    <p>category</p>
+                    <h3>テキストテキストテキストテキストテキストテキストテキストテキスト</h3>
+                    <p>XXXX.XX.XX</p>
+                </div>
+            </li>
+            <li>
+                <img class="fadein" src="img/o08.jpg">
+                <div class="text">
+                    <p>category</p>
+                    <h3>テキストテキストテキストテキストテキストテキストテキストテキスト</h3>
+                    <p>XXXX.XX.XX</p>
+                </div>
+            </li>
+            <li>
+                <img class="fadein" src="img/zarticle00.jpg">
+                <div class="text">
+                    <p>category</p>
+                    <h3>テキストテキストテキストテキストテキストテキストテキストテキスト</h3>
+                    <p>XXXX.XX.XX</p>
+                </div>
+            </li>
+            <li>
+                <img class="fadein" src="img/zarticle05.jpg">
+                <div class="text">
+                    <p>category</p>
+                    <h3>テキストテキストテキストテキストテキストテキストテキストテキスト</h3>
+                    <p>XXXX.XX.XX</p>
+                </div>
+            </li>
+            <li>
+                <img class="fadein" src="img/znyanya04.jpg">
+                <div class="text">
+                    <p>category</p>
+                    <h3>テキストテキストテキストテキストテキストテキストテキストテキスト</h3>
+                    <p>XXXX.XX.XX</p>
+                </div>
+            </li>
+            <li>
+                <img class="fadein" src="img/znyanya05.jpg">
+                <div class="text">
+                    <p>category</p>
+                    <h3>テキストテキストテキストテキストテキストテキストテキストテキスト</h3>
+                    <p>XXXX.XX.XX</p>
+                </div>
+            </li>
+            <li>
+                <img class="fadein" src="img/zzz10.jpg">
+                <div class="text">
+                    <p>category</p>
+                    <h3>テキストテキストテキストテキストテキストテキストテキストテキスト</h3>
+                    <p>XXXX.XX.XX</p>
+                </div>
+            </li>
+            <li>
+                <img class="fadein" src="img/zzz4.jpg">
+                <div class="text">
+                    <p>category</p>
+                    <h3>テキストテキストテキストテキストテキストテキストテキストテキスト</h3>
+                    <p>XXXX.XX.XX</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<footer id="contact">
+    <div class="sub-title">
+        <h1>CONTACT</h1>
+    </div>
+    <div class="footer-flex wrapper">
+        <div class="footer-text item">
+            <p>テキストテキストテキスト</p>
+            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+            <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+        </div>
+
+        <form class="item" action="/form.php" method="post">　<!--formタグは中のものをphpを使って送信する。これはpostメソッドを使ってる-->
+                <div class="form">
+                    <div class="form-container">
+                        <p>Name:</p>
+                        <input type="name" id="name">
+                    </div>
+                    <div class="form-container">
+                        <p>Mail:</p>
+                        <input type="mail" id="mail">
+                    </div>
+                    <div class="form-container">
+                        <p>Message:</p>
+                        <textarea></textarea>
+                    </div>
+                </div>
+                <div class="button"><input type="submit" id="submit" value="SEND"></div>
+            </div>
+        </form>
+    </div>
+    <p id="footer-logo">© Nyanchans</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,394 @@
+/*---------------    共通      ---------------------*/
+body{
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+li{
+    list-style: none;
+}
+
+img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.wrapper{
+    max-width: 1360px;
+    padding: 0 30px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.sub-title{
+    font-size: 20px;
+    text-align: center;
+    padding-top: 80px;
+}
+
+/*フェードイン*/
+
+.fadein {       /*jsでopacity:1,translateY(0)にして動きを出すのであらかじめ透明化と一ずらしをしておく*/
+    opacity : 0;
+    transform: translateY(20px);
+    transition: all 1s;
+  }
+
+
+/*---------------   ヘッダー       ---------------------*/
+header{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;          /*ヘッダーの下の要素は80pxあける*/
+    position: fixed;
+    z-index: 10;
+    background-color: white;
+}
+
+.head{
+    display: flex;
+    justify-content: space-between;
+}
+
+                /*ボタンの形*/
+
+.toggle_btn{
+    display: block;
+    position: fixed;
+    top: 25px;
+    right: 45px;
+    width: 30px;
+    height: 30px;
+    transition: all .5s;
+    cursor: pointer;
+    z-index: 30;
+}
+
+.toggle_btn span{
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    border-radius: 4px;
+    transition: all .5s;
+}
+.toggle_btn span:nth-child(1) {
+    top: 4px;
+}
+.toggle_btn span:nth-child(2) {
+  top: 14px;
+}
+.toggle_btn span:nth-child(3) {
+  bottom: 4px;
+}
+.open .toggle_btn span {
+  background-color: #fff;
+}
+.open .toggle_btn span:nth-child(1) {
+  -webkit-transform: translateY(10px) rotate(-315deg);
+  transform: translateY(10px) rotate(-315deg);
+}
+.open .toggle_btn span:nth-child(2) {
+  opacity: 0;
+}
+.open .toggle_btn span:nth-child(3) {
+  -webkit-transform: translateY(-10px) rotate(315deg);
+  transform: translateY(-10px) rotate(315deg);
+}
+
+.toggle_btn:hover{
+    cursor: pointer;
+}
+
+                /*左から出てくるメニュー*/
+nav{
+    transition: all .5s;
+    color: white;
+    height: 100%;
+    width: 300px;
+    background-color: black;
+    position: fixed;
+    z-index: 30;
+    top: 0;
+    left: -300px; /*left:-300px;で見えなくする*/
+    opacity: 0;
+}
+
+.open nav{
+    left: 0;
+    opacity: 1;
+}
+
+nav .menu {
+    padding-right: 30px;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+nav .menu li{
+    line-height: 50px;
+    border-top: 1px solid white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+nav .menu li:last-child{
+    border-bottom: 1px solid white ;
+}
+
+nav .menu a,
+nav .sns a{
+    color: white;
+}
+
+nav .sns li{
+    line-height: 30px;
+    font-size: 15px;
+}
+
+            /*メニュー出てきた時の全体背景*/
+#mask {
+  display: none;
+  transition: all .5s;
+}
+.open #mask {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .8;
+  z-index: 20;
+  cursor: pointer;
+}
+
+
+/*---------------   メイン       ---------------------*/
+.movie {
+    margin-top: 80px;
+    height: 100%;
+    width: 100%;
+}
+
+.movie video{
+    height: 100%;
+    width: 100%;
+}
+
+/*---------------   PICK UP       ---------------------*/
+.slick-area{
+    padding: 0;
+}
+
+.pick{
+    width: 100%;
+}
+
+.pick ul li{
+    position: relative;
+}
+
+.slick-slide img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+}
+
+.slick-track{ 
+    height: 50vh;
+}
+
+.slick-arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.prev-arrow {
+  left: 0;
+  z-index: 10;
+}
+.next-arrow {
+  right: 0;
+}
+#arrow {
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+}
+
+.slick-dots #text{
+    display:none;
+}
+  
+
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before{
+    opacity: 1;
+    color: green; /* hover時の色を変更 */
+}
+
+
+/*---------------   FEATURE       ---------------------*/
+.feature ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.feature ul li{
+    width: 32%;
+    box-shadow:0px 0px 8px 3px #ccc;
+    margin-bottom: 30px;
+    height: 420px;
+    transition: all  0.3s ease;
+}
+
+.feature ul li img{
+    height: 60%;
+}
+
+
+.feature .text{
+    padding: 0 20px;
+    height: 40%;
+}
+
+.feature .text p{
+    font-size: 12px;
+}
+
+.feature .text h3{
+    font-size: 14px;
+}
+
+
+.feature .text p:last-child{
+    text-align: right;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .feature ul li{
+        width: 47%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .feature ul li{
+        width: 100%;
+    }
+}
+
+
+
+
+
+/*---------------   コンタクト  フッター  ---------------------*/
+footer{
+    background-color: black;
+    color: white;
+}
+
+footer .sub-title{
+    padding: 20px;
+}
+
+footer .sub-title h1{
+    margin-bottom: 0;
+}
+
+.footer-flex{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .item{
+    width: 46%;
+}
+footer .footer-text{
+    font-size: 14px;
+}
+
+footer .footer-text p{
+    margin-bottom: 40px;
+}
+
+.form{
+    width: 100%;
+}
+
+.form-container p{
+    margin-bottom: 0;
+}
+
+.form .form-container input{
+    height: 40px;
+    width: 100%;
+}
+
+.form .form-container textarea{
+    height: 60px;
+    width: 100%;
+    resize: vertical;
+}
+
+
+.button input{
+    height: 50px;
+    width: 200px;
+    margin: 30px 0;
+    background-color: black;
+    color: white;
+    display: block;
+    cursor: pointer;
+}
+
+.button input:hover{
+    color: black;
+    background-color: white;
+}
+
+#footer-logo{
+    font-size: 10px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 0;
+    padding: 10px auto;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .footer-flex{
+        flex-direction: column;
+    }
+    footer .item{
+        width: 100%;
+    }
+    .button input{
+        width: 100%;
+    }
+}
+
+
+
+
+
