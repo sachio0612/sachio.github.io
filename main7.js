@@ -43,8 +43,6 @@ $(function(){
       autoplay: true, //「オプション名: 値」の形式で書く
       dots: true, //複数書く場合は「,」でつなぐ
       slidesToShow: 3,
-      prevArrow: '<img id="arrow" src="http://kasumiblog.xsrv.jp/codepen/images/arrow_lft.png" class="slide-arrow prev-arrow">',
-      nextArrow: '<img id="arrow" src="http://kasumiblog.xsrv.jp/codepen/images/arrow_rig.png" class="slide-arrow next-arrow">',
       responsive: [
         {
           breakpoint: 768,
